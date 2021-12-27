@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import MiniCart from './MiniCart'
 import Login from './Login'
 import { jwt } from './cart'
 
@@ -12,6 +13,7 @@ const CartContent = () => {
   return (
     <div>
       <Login />
+      <MiniCart />
       Jwt: {token}
     </div>
   )

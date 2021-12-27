@@ -18,7 +18,7 @@ const Login = () => {
         <div
           className="absolute p-5 border-4 border-blue-800"
           style={{
-            width: 300, top: "2rem"
+            width: 300, top: "2rem", left: -250, backgroundColor: '#fff'
           }}
         >
           <input
