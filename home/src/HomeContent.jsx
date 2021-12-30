@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { getProducts, currency } from './products'
-import { addToCart, useLogginIn } from 'cart/cart'
+import { addToCart, useLoggedIn } from 'cart/cart'
 
 export default function HomeContent() {
-  const loggedIn = useLogginIn()
+  const loggedIn = useLoggedIn()
   const [products, setProducts] = useState([])
 
   useEffect(() => {
