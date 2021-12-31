@@ -1,29 +1,30 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { useParams } from 'react-router-dom'
-import { getProductById, currency } from 'home/products'
-import placeAddToCart from 'addtocart/placeAddToCart'
+import React, { useState, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
 
-const PDPContent = () => {
-  const { id } = useParams()
-  const [product, setProduct] = useState(null)
+import { getProductById, currency } from "home/products";
+import placeAddToCart from "addtocart/placeAddToCart";
+
+export default function PDPContent() {
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     if (id) {
-      getProductById(id).then(setProduct)
+      getProductById(id).then(setProduct);
     } else {
-      setProduct(null)
+      setProduct(null);
     }
-  }, [id])
+  }, [id]);
 
-  const addToCart = useRef(null, [product, setProduct])
+  const addToCart = useRef(null);
 
   useEffect(() => {
     if (addToCart.current) {
-      placeAddToCart(addToCart.current, product.id)
+      placeAddToCart(addToCart.current, product.id);
     }
-  }, [product])
+  }, [product]);
 
-  if(!product) return null
+  if (!product) return null;
 
   return (
     <div className="grid grid-cols-2 gap-5">
@@ -32,9 +33,7 @@ const PDPContent = () => {
       </div>
       <div>
         <div className="flex">
-          <div className="font-bold text-3xl flex-grow">
-            <a>{product.name}</a>
-          </div>
+          <h1 className="font-bold text-3xl flex-grow">{product.name}</h1>
           <div className="font-bold text-3xl flex-end">
             {currency.format(product.price)}
           </div>
@@ -44,7 +43,5 @@ const PDPContent = () => {
         <div className="mt-10">{product.longDescription}</div>
       </div>
     </div>
-  )
+  );
 }
-
-export default PDPContent
