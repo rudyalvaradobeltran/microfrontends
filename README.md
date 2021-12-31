@@ -1,16 +1,24 @@
-Full Site Federation eCommerce Example
-===============================================
+### MICROFRONTENDS
+  
+Proyecto de prueba de eCommerce con infraestructura de microfrontends en base a tutorial de Jack Herrington https://github.com/jherr creado con React, Solid.js, Nest.js, Module Federation, React-router-dom, Tailwind CSS, Cypress y Jest.
+  
+#### Directorios
+  
+addtocart (Solid.js)  
+cart (React)  
+home (React)  
+pdp (React)  
+server (Nest.js)
+  
+#### Instalación y run (cada directorio)
 
-An example eCommerce app Module Federation in a Full Site Federation configuration, using [react-router-dom](https://www.npmjs.com/package/react-router-dom) to manage the routing.
-
-# Installation
-
-In these five directories; `addtocart`, `cart`, `home`, `pdp` and `server` run these commands:
-
-```sh
-yarn && yarn start
-```
-
-In a different terminal window for each app.
-
-The visit the [home page](http://localhost:3000/).
+- npm install  
+- npm start
+  
+#### Pruebas unitarias (directorio home)
+  
+- npm test
+  
+#### Pruebas E2E
+  
+- npx cypress run
